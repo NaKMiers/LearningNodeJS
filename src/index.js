@@ -3,11 +3,12 @@ const path = require('path')
 const morgan = require('morgan')
 const handlebars = require('express-handlebars')
 const port = 3000
-
 const app = express()
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 // HTTP logger
-app.use(morgan('combined'))
+// app.use(morgan('combined'))
 
 // Template Engine
 app.engine('.hbs', handlebars({
