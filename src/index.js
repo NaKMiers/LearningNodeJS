@@ -7,6 +7,11 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.use(express.urlencoded({
+  extended: true
+})) // xu li du lieu tu form (form data)
+app.use(express.json()) // xu li du lieu tu form (form data)
+
 // HTTP logger
 // app.use(morgan('combined'))
 
@@ -30,7 +35,8 @@ app.get('/search', (req, res) => {
 })
 
 app.post('/search', (req, res) => {
-  res.render('nguyen anh khoa')
+  console.log(req.body)
+  res.send('nguyen anh khoa')
 })
  
 app.listen(port, () => { 
