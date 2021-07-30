@@ -3,6 +3,7 @@ const path = require('path')
 const morgan = require('morgan')
 const handlebars = require('express-handlebars')
 const port = 3000
+
 const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -39,6 +40,4 @@ app.post('/search', (req, res) => {
   res.send('nguyen anh khoa')
 })
  
-app.listen(port, () => { 
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
