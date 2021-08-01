@@ -5,6 +5,10 @@ const handlebars = require('express-handlebars')
 const port = 3000
 
 const route = require('./routes') // auto get file index.js at routes folder
+const db = require('./config/db')
+
+// connect to db
+db.connect()
 
 const app = express() // create instance of express
 
@@ -28,10 +32,8 @@ app.engine(
     }),
 )
 app.set('view engine', '.hbs')
-app.set('views', path.join(__dirname, 'resources/views'))
+app.set('views', path.join(__dirname, 'resources', 'views'))
 
 route(app)
 
-app.listen(port, () =>
-    console.log(`Example app listening at http://localhost:${port}`),
-)
+app.listen(port, () => console.log(`App listening at http://localhost:${port}`))
