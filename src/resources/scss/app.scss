@@ -3,9 +3,16 @@
 h1 {
     color: $color;
     padding: 4px;
-    text-align: center;
+    text-align: center
 }
 
 .card-course-item {
-    margin: 8px;
+    margin-top: 16px;
+}
+
+.user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 4px;
 }

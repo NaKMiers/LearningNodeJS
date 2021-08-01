@@ -1,4 +1,5 @@
 const newsRouter = require('./news')
+const meRouter = require('./me')
 const coursesRouter = require('./courses')
 const siteRouter = require('./site')
 
@@ -8,6 +9,8 @@ function route(app) {
     app.use('/', siteRouter)
 
     app.use('/courses', coursesRouter)
+
+    app.use('/me', meRouter)
 }
 
 module.exports = route
