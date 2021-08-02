@@ -23,19 +23,20 @@ class CourseController {
         const formData = req.body
         formData.image = `https://img.youtube.com/vi/${formData.videoId}/sddefault.jpg`
         const course = new Course(formData)
-        course.save()
+        course
+            .save()
             .then(() => res.redirect('/'))
-            .catch(error => {
-
-            })
+            .catch((error) => {})
     }
 
     // [GET] /courses/:id/edit
     edit(req, res, next) {
         Course.findById(req.params.id)
-            .then(course => res.render('courses/edit', {
-                course: mongooseToObject(course)
-            }))
+            .then((course) =>
+                res.render('courses/edit', {
+                    course: mongooseToObject(course),
+                }),
+            )
             .catch(next)
     }
 
@@ -44,8 +45,15 @@ class CourseController {
         const formData = req.body
         formData.image = `https://img.youtube.com/vi/${formData.videoId}/sddefault.jpg`
         Course.updateOne({ _id: req.params.id }, formData)
-        .then(() => res.redirect('/me/stored/courses'))
-        .catch(next)
+            .then(() => res.redirect('/me/stored/courses'))
+            .catch(next)
+    }
+
+    // [DELETE] /courses/:id
+    destroy(req, res, next) {
+        Course.deleteOne({ _id: req.params.id })
+            .then(() => res.redirect('back'))
+            .catch(next)
     }
 }
 
