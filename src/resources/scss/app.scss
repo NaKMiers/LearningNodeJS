@@ -3,7 +3,8 @@
 h1 {
     color: $color;
     padding: 4px;
-    text-align: center
+    text-align: center;
+    font-size: 56px;
 }
 
 .card-course-item {
@@ -15,4 +16,17 @@ h1 {
     height: 28px;
     border-radius: 50%;
     margin-right: 4px;
+}
+
+.dropdown-content {
+    margin-top: 7px;
+    transform: translateX(-15%);
+}
+
+.thumbnail-card {
+    width: 100%;
+    padding-top: 56.25%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
