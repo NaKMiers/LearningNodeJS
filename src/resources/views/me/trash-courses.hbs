@@ -1,7 +1,7 @@
 <div class="mt-4">
     <div>
-		<a href="/me/stored/courses">My courses</a>
 		<h1>Deleted course</h1>
+		<a href="/me/stored/courses">My courses</a>
 	</div>
 
     <table class="table mt-4">
@@ -10,7 +10,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Course Name</th>
                 <th scope="col">Level</th>
-                <th scope="col" colspan="2">Create At</th>
+                <th scope="col" colspan="2">Deleted At</th>
             </tr>
         </thead>
         
@@ -20,7 +20,7 @@
                 <th scope="row">{{sum @index 1}}</th>
                 <td>{{this.name}}</td>
                 <td>{{this.level}}</td>
-                <td>{{this.createdAt}}</td>
+                <td>{{this.deletedAt}}</td>
                 <td>
                     <a href="" class="btn btn-link btn-restore" data-id="{{this._id}}">Restore</a>
                     <a href="" class="btn btn-link" data-toggle="modal" data-id="{{this._id}}" data-target="#delete-course-modal">Delete</a>
