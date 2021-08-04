@@ -20,7 +20,7 @@ h1 {
 
 .dropdown-content {
     margin-top: 7px;
-    transform: translateX(-15%);
+    // transform: translateX(-15%);
 }
 
 .thumbnail-card {
@@ -29,4 +29,9 @@ h1 {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.checkbox-select-all-options {
+    width: 150px;
+    margin: 0px 16px;
 }
